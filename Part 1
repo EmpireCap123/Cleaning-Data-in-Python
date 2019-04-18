@@ -9,3 +9,29 @@
 ...            'Shelfmarks']
 
 >>> df.drop(to_drop, inplace=True, axis=1)
+
+# How to change the data/variable type of a variable/column
+
+# How to identify NaN (Null) empty cells
+# How to remove unwanted rows
+# How to replace NaN (Null) empty cells with another value (mean, median, mode, etc)
+
+# How to identify the distribution of a column/variable
+# How to identify outliers of a column/variable
+# How to cap outliers
+# How to remove rows with outliers
+
+# How to make sure all values in a variable/column are appropriate (numbers, characters, spelling, etc)
+# How to correct these errors
+
+# How to identify leading spaces or ending spaces that shouldn't be ther
+# How to correct for this
+
+# How to identify duplicate rows of data
+# How to correct for this
+
+# Correct for the appropriate number of characters for the given variable/column
+
+# Change text values to appropriate lower or upper case
+
+# Spell check
