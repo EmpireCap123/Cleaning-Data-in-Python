@@ -1,0 +1,11 @@
+# How to drop columns that you don't want
+>>> to_drop = ['Edition Statement',
+...            'Corporate Author',
+...            'Corporate Contributors',
+...            'Former owner',
+...            'Engraver',
+...            'Contributors',
+...            'Issuance type',
+...            'Shelfmarks']
+
+>>> df.drop(to_drop, inplace=True, axis=1)
