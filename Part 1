@@ -48,25 +48,64 @@ How to Change variable types
 
 
 # How to identify NaN (Null) empty cells
+Count the Null Columns
+  null_columns = df.columns[df.isnull().any()]
+  df[null_columns].isnull().any()
+Print(Show) all rows that have any NaN/null values
+  print(df[df.isnull().any(axis=1)][null_columns].head())
+Print(Show) all rows that have NaN/null values for a specified column/variable
+  print(df[df["column_name"].isnull()][null_columns])
 # How to remove unwanted rows
+df.drop(['row_id', 'row_id']) - drops rows
+df.drop('column_id', axis=1) - drops columns
+df[df.column_name != 'Value' ] - creates new data frame without the rows with 'Value' in the specified column
+df.drop(df.index[2]) - drops row #3
+df.drop(df.index[2,4]) - drops a range of rows
+df.drop(df.index[-2]) - drops relative to the bottom row
+df[:3] - keeps top 3 rows
+df[:-3] - drops bottom 3 rows
 # How to replace NaN (Null) empty cells with another value (mean, median, mode, etc)
+df["column_name"].fillna("fill_value", inplace=True)
 
 # How to identify the distribution of a column/variable
+  - use a scatter plot of the specified independent variable against the dependent variable
+  - can use a percentile plot
 # How to identify outliers of a column/variable
+  - can use a box plot
+  - can use a percentile plot
 # How to cap outliers
-# How to remove rows with outliers
+1) Percentile capping
+for col in df.columns:
+    percentiles = df[col].quantile([0.01,0.99]).values
+    df[col][df[col] <= percentiles[0]] = percentiles[0]
+    df[col][df[col] >= percentiles[1]] = percentiles[1]
+2) If Else capping
+  x = column
+  if x > threshold:
+    value
+  else:
+    x
+# Can remove rows with outliers
 
 # How to make sure all values in a variable/column are appropriate (numbers, characters, spelling, etc)
+df.describe() - provides count, mean, sd, and percentiles of a column
+df.column_name.unique()
 # How to correct these errors
 
-# How to identify leading spaces or ending spaces that shouldn't be ther
-# How to correct for this
+# How to identify leading spaces or ending spaces that shouldn't be there
+df['column_name'] = df['column_name'].str.strip() - removes leading and ending spaces
+df['column_name'] = df['column_name'].str.replace(" ","") - removes all spaces
 
 # How to identify duplicate rows of data
-# How to correct for this
+df["is_duplicate"] = df.duplicated() - adds column with TRUE/FALSE where TRUE for duplicate rows
+df.drop_duplicates(keep=FALSE, inplace=TRUE) - removes all duplicate rows
+df.drop_duplicates(subset='column_name', keep=FALSE, inplace=TRUE) - removes rows with duplicates in specified column
 
 # Correct for the appropriate number of characters for the given variable/column
+df = df.rename(columns = {"original_column_name":"new_column_name"}) - renames the column
 
 # Change text values to appropriate lower or upper case
+df.column_name.lower() - makes column lower case
+df.column_name.upper() - makes column upper case
 
 # Spell check
