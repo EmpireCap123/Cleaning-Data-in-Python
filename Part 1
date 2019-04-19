@@ -11,6 +11,41 @@
 >>> df.drop(to_drop, inplace=True, axis=1)
 
 # How to change the data/variable type of a variable/column
+5 variable types 
+1) Numbers - numeric values - 4 numeric data types
+  1a) int (signed integers) (no decimals)
+  1b) long (long integers) (L on the end)
+  1c) float (floating point real values) (can include decimals)
+  1d) complex (complex numbers) (includes imaginary number as j)
+2) String (continuous characters represented in quotation marks, single or double quotations)
+  - subsets of strings can be made using the slice operator [] or [:]
+    with index starting at 0 and working there way from -1 at the end.
+3) List (items separated by commas and within brackets [], items can be different data types)
+  - lists use the slice operator [] or [:]
+  - lists can be concatenated using +
+  - ilsts can be duplicated using *
+4) Tuple (items separated by commas and within (), can't be changed similar to read-only)
+5) Dictionary (items separated by commas and within {} )
+  - values can be assigned and accessed using []
+How to Change variable types
+1 - int(x [,base]) - converts x to integer
+2 - long(x [,base]) - converts x to long 
+3 - float(x) - converts x to float
+4 - complex(real [,imag]) - creates an complex number
+5 - str(x) - converts x to string
+6 - repr(x) - converts x to expression string
+7 - eval(str) - evaluates a string and returns an object
+8 - tuple(s) - converts s to a tuple
+9 - list(s) - converts s to a list
+10 - set(s) - converts s to a set
+11 - dict(d) - creates a dictionary d
+12 - frozenset(s) - converts s to a frozen set
+13 - chr(x) - converts integer to a character
+14 - unichr(x) - converts an integer into a unicode character
+15 - ord(x) - converts a single character to its integer value
+16 - hex(x) - converts an integer into a hexidecimal string
+17 - oct(x) - converts an integer to an octal string
+
 
 # How to identify NaN (Null) empty cells
 # How to remove unwanted rows
